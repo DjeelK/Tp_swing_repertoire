@@ -4,6 +4,7 @@ import com.toedter.calendar.JDateChooser;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.image.BufferedImage;
 
 public class MainFrame extends JFrame {
     private JPanel contentPane;
@@ -134,6 +135,51 @@ public class MainFrame extends JFrame {
         gbc.gridy = 7;
         leftPanel.add(dateChooser, gbc);
         JPanel uploadPanel = new JPanel();
+
+        // Buttons
+        ImageIcon originalIcon1 = new ImageIcon("C:\\Users\\Administrateur\\Documents\\M2i_EXO\\SWING\\tp_swing_card_agent\\src\\main\\java\\org\\example\\asset\\19-add-cat_icon-icons.com_76695.png");
+        ImageIcon originalIcon2 = new ImageIcon("C:\\Users\\Administrateur\\Documents\\M2i_EXO\\SWING\\tp_swing_card_agent\\src\\main\\java\\org\\example\\asset\\disquette.png");
+        ImageIcon originalIcon3 = new ImageIcon("C:\\Users\\Administrateur\\Documents\\M2i_EXO\\SWING\\tp_swing_card_agent\\src\\main\\java\\org\\example\\asset\\pen_edit_modify_pencil_icon_181536.png");
+        ImageIcon originalIcon4 = new ImageIcon("C:\\Users\\Administrateur\\Documents\\M2i_EXO\\SWING\\tp_swing_card_agent\\src\\main\\java\\org\\example\\asset\\basket_trash_recycle_bin_icon_181538.png");
+        ImageIcon originalIcon5 = new ImageIcon("C:\\Users\\Administrateur\\Documents\\M2i_EXO\\SWING\\tp_swing_card_agent\\src\\main\\java\\org\\example\\asset\\droit-deffacement.png");
+        ImageIcon originalIcon6 = new ImageIcon("C:\\Users\\Administrateur\\Documents\\M2i_EXO\\SWING\\tp_swing_card_agent\\src\\main\\java\\org\\example\\asset\\printer.png");
+
+        ImageIcon resizedIcon1= resizeIcon(originalIcon1, 25, 25);
+        ImageIcon resizedIcon2 = resizeIcon(originalIcon2, 25, 25);
+        ImageIcon resizedIcon3 = resizeIcon(originalIcon3, 25, 25);
+        ImageIcon resizedIcon4 = resizeIcon(originalIcon4, 25, 25);
+        ImageIcon resizedIcon5 = resizeIcon(originalIcon5, 25, 25);
+        ImageIcon resizedIcon6 = resizeIcon(originalIcon6, 25, 25);
+
+        btnNew = new JButton("New",resizedIcon1);
+        btnSave = new JButton("Save",resizedIcon2);
+        btnUpdate = new JButton("Update",resizedIcon3);
+        btnDelete = new JButton("Delete",resizedIcon4);
+        btnClear = new JButton("Clear",resizedIcon5);
+        btnPrint = new JButton("Print",resizedIcon6);
+
+        JPanel buttonPanel = new JPanel();
+        gbc.gridx = 1;
+        gbc.gridy = 8;
+        leftPanel.add(buttonPanel, gbc);
+        buttonPanel.setLayout(new FlowLayout());
+        buttonPanel.add(btnNew);
+        buttonPanel.add(btnSave);
+        buttonPanel.add(btnUpdate);
+        buttonPanel.add(btnDelete);
+        buttonPanel.add(btnClear);
+        buttonPanel.add(btnPrint);
+
+        gbc.gridx = 1;
+        gbc.gridy = 8;
+        leftPanel.add(buttonPanel,gbc);
+
+        // Search field
+        txtSearch = new JTextField(10);
+        gbc.gridx = 0;
+        gbc.gridy = 8;
+        leftPanel.add(txtSearch, gbc);
+
         //Address
         gbc.gridx = 2;
         gbc.gridy = 0;
@@ -166,16 +212,31 @@ public class MainFrame extends JFrame {
         gbc.gridwidth = 10;
         gbc.gridheight = 10;
 
-        // Add leftPanel to topPanel
         topPanel.add(leftPanel, BorderLayout.WEST);
         topPanel.add(uploadPanel, BorderLayout.CENTER);
-
-
-
         JPanel bottomPanel = new JPanel();
-
-
         contentPane.add(topPanel, BorderLayout.NORTH);
         contentPane.add(bottomPanel, BorderLayout.SOUTH);
+
+        // Middle panel for search and buttons
+        JPanel middlePanel = new JPanel();
+        middlePanel.setLayout(new GridBagLayout());
+        GridBagConstraints gbcMiddle = new GridBagConstraints();
+        gbcMiddle.insets = new Insets(10, 10, 10, 10);
+
+
+        // Add middlePanel to topPanel
+        topPanel.add(middlePanel, BorderLayout.CENTER);
+        contentPane.add(topPanel, BorderLayout.NORTH);
+    }
+
+    private static ImageIcon resizeIcon(ImageIcon icon, int width, int height) {
+        Image img = icon.getImage();
+        BufferedImage resizedImg = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
+        Graphics2D g2 = resizedImg.createGraphics();
+        g2.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
+        g2.drawImage(img, 0, 0, width, height, null);
+        g2.dispose();
+        return new ImageIcon(resizedImg);
     }
 }

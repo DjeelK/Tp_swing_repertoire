@@ -1,5 +1,4 @@
 package org.example.main;
 
-public class UpdateDialog {
-
+public class InsertDialog {
 }

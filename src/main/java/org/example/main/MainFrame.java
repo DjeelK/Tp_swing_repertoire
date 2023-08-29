@@ -137,11 +137,11 @@ public class MainFrame extends JFrame {
         JPanel uploadPanel = new JPanel();
 
         // Buttons
-        ImageIcon originalIcon1 = new ImageIcon("C:\\Users\\Administrateur\\Documents\\M2i_EXO\\SWING\\tp_swing_card_agent\\src\\main\\java\\org\\example\\asset\\19-add-cat_icon-icons.com_76695.png");
-        ImageIcon originalIcon2 = new ImageIcon("C:\\Users\\Administrateur\\Documents\\M2i_EXO\\SWING\\tp_swing_card_agent\\src\\main\\java\\org\\example\\asset\\disquette.png");
-        ImageIcon originalIcon3 = new ImageIcon("C:\\Users\\Administrateur\\Documents\\M2i_EXO\\SWING\\tp_swing_card_agent\\src\\main\\java\\org\\example\\asset\\pen_edit_modify_pencil_icon_181536.png");
-        ImageIcon originalIcon4 = new ImageIcon("C:\\Users\\Administrateur\\Documents\\M2i_EXO\\SWING\\tp_swing_card_agent\\src\\main\\java\\org\\example\\asset\\basket_trash_recycle_bin_icon_181538.png");
-        ImageIcon originalIcon5 = new ImageIcon("C:\\Users\\Administrateur\\Documents\\M2i_EXO\\SWING\\tp_swing_card_agent\\src\\main\\java\\org\\example\\asset\\droit-deffacement.png");
+        ImageIcon originalIcon1 = new ImageIcon("C:\\Users\\Administrateur\\Documents\\M2i_EXO\\SWING\\tp_swing_card_agent\\src\\main\\java\\org\\example\\asset\\add.png");
+        ImageIcon originalIcon2 = new ImageIcon("C:\\Users\\Administrateur\\Documents\\M2i_EXO\\SWING\\tp_swing_card_agent\\src\\main\\java\\org\\example\\asset\\save.png");
+        ImageIcon originalIcon3 = new ImageIcon("C:\\Users\\Administrateur\\Documents\\M2i_EXO\\SWING\\tp_swing_card_agent\\src\\main\\java\\org\\example\\asset\\update.png");
+        ImageIcon originalIcon4 = new ImageIcon("C:\\Users\\Administrateur\\Documents\\M2i_EXO\\SWING\\tp_swing_card_agent\\src\\main\\java\\org\\example\\asset\\delete1.png");
+        ImageIcon originalIcon5 = new ImageIcon("C:\\Users\\Administrateur\\Documents\\M2i_EXO\\SWING\\tp_swing_card_agent\\src\\main\\java\\org\\example\\asset\\clear1.png");
         ImageIcon originalIcon6 = new ImageIcon("C:\\Users\\Administrateur\\Documents\\M2i_EXO\\SWING\\tp_swing_card_agent\\src\\main\\java\\org\\example\\asset\\printer.png");
 
         ImageIcon resizedIcon1= resizeIcon(originalIcon1, 25, 25);

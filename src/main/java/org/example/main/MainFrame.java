@@ -7,6 +7,7 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 
 public class MainFrame extends JFrame {
+
     private JPanel contentPane;
     private JTextField txtEmployeeID, txtName, txtAge, txtBloodGroup, txtContactNo;
     private JRadioButton radioMale, radioFemale;
